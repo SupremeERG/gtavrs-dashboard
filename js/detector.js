@@ -1,4 +1,4 @@
 
 const ua = detect.parse(navigator.userAgent);
 
-console.log(ua.device)
+$('body').append(`<p>${ua.device}<p>`);
