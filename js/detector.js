@@ -1,4 +1,9 @@
 
-const ua = detect.parse(navigator.userAgent);
+const device = detect.parse(navigator.userAgent).device;
 
-$('body').append(`<p>${ua.device}<p>`);
+if(device != null) {
+    $('head').append('<link rel="stylesheet" href="css/mobile.css"</link>')
+}
+else {
+    $('head').append('<link rel="stylesheet" href="css/stylesheet.css"</link>')
+}

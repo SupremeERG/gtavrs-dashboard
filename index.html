@@ -7,21 +7,72 @@
         <!-- Set meta + title/icon -->
         <meta charset="UTF-8">
         <title>GTAVRS Dashboard</title>
-        <link rel="icon" href="images/icon.jpg">
+        <link rel="icon" href="images/icon.png">
 
         <!-- Set CSS + Bootstrap 5-->
         <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="css/specific.css">
 
     </head>
 
     <header>
     </header>
-    <body>
+    <body class="bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-popo">
+            <div class="container-fluid">
+              <a class="navbar-brand">
+                <img src="images/icon.png" class="btn logo-header" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" role="button" alt="logo">
+                Grand Theft Auto 5 • Recovery Service
+              </a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item text-dark">
+                    <a class="nav-link active" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#" tabindex="-1">Enabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <p id="description">
+            Best GTA 5 recovery service for fast, trustworthy deals
+            <br>
+            featuring money drops, level change, modded vehicles,
+            <br>
+            modded outfits, crew mods and unlock all option.
+            </p>
 
 
 
 
-
+        
+        
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Offcanvas with backdrop</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <p>.....</p>
+                </div>
+              </div>
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/detect.min.js"></script>

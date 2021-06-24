@@ -1,11 +1,10 @@
-* {}
-
-.contact,.discord {
-    display: inline;
-    color: black;
-    border: 2px solid black;
-    position: relative;
-    top: 5px;
-    left: 83em;
-    padding: 5px;
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#navbarSupportedContent {
+    font-weight: 600;
+    margin-left: 43em;
+}
+.bg-popo {
+    background: linear-gradient(to right, #4287f5, #b61010);
 }
