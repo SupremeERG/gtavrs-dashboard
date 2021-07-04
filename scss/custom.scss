@@ -1,9 +1,7 @@
+// bootstrap overrides
 
-$primary: #fcaf17;
-$secondary: #38a30a;
-$dark: #060606;
-$success: #0dcaf0;
-$info: #4287f5;
-$danger: rgb(182, 16, 16);
+$primary: #51ff00;
+$dark: #353937;
 
-@import "../bootstrap/scss/bootstrap";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
