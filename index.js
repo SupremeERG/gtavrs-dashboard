@@ -23,7 +23,7 @@ app.post('/contact', (req, res) => {
     console.log(req.body);
     res.send("ok")
     nodemailer.createTransport({
-        host: 'mail.yourdomain.com',
+        host: 'mail.name.com',
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
