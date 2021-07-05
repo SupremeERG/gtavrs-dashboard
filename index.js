@@ -1,8 +1,10 @@
 const PORT = 80;
 const express = require("express");
 const path = require("path");
+const https = require("https");
+const fs = require("fs");
 const app = express();
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
 
 // set middleware
 app.use(express.urlencoded({ extended: true }));
@@ -41,6 +43,11 @@ app.get('*', (req, res) => {
     res.status(404).send("Page not found");
 });
 
-app.listen(PORT, () => {
-    console.log("Listening on port", PORT)
-});
+// listen
+https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app)
+.listen(PORT, function () {
+  console.log('App listening on port', PORT)
+})
