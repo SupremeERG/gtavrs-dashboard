@@ -24,7 +24,7 @@ app.post('/contact', (req, res) => {
     res.send("ok")
     nodemailer.createTransport({
         host: 'mail.name.com',
-        port: 465,
+        port: 443,
         secure: true, // true for 465, false for other ports
         auth: {
           user: 'support@cheapgta.com', // your domain email address
