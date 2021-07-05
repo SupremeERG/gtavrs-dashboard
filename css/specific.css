@@ -3,6 +3,10 @@
     width: 24em;
 }
 
+.contact-img {
+    width: 128px;
+    height: 128px;
+}
 
 .contact-option {
     display: inline-block;
