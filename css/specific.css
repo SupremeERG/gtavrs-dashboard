@@ -8,6 +8,10 @@
     height: 128px;
 }
 
+.contact-title {
+    text-align: center;
+}
+
 .contact-option {
     display: inline-block;
 }
