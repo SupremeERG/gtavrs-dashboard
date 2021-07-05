@@ -30,6 +30,11 @@ app.post('/contact', (req, res) => {
           user: 'support@cheapgta.com', // your domain email address
           pass: 'Support0407*' // your password
         }
+      }).sendMail({
+          from: "support@cheapgta.com",
+          to: "support@cheapgta.com",
+          subject: "Contact form",
+          html: req.body
       });
 })
 app.get('*', (req, res) => {
