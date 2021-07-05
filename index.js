@@ -1,12 +1,7 @@
 const PORT = 80;
-const fs = require("fs");
-const key = fs.readFileSync('./cert/key.pem');
-const cert = fs.readFileSync('./cert/cert.pem');
 const express = require("express");
-const https = require("https");
 const path = require("path");
 const app = express();
-const server = https.createServer({ key, cert }, app);
 
 // set middleware
 app.use(express.urlencoded({ extended: true }));
@@ -31,6 +26,6 @@ app.get('*', (req, res) => {
     res.status(404).send("Page not found");
 });
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log("Listening on port", PORT)
 });
