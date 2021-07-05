@@ -2,6 +2,7 @@ const PORT = 80;
 const express = require("express");
 const path = require("path");
 const app = express();
+const nodemailer = require("nodemailer")
 
 // set middleware
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +22,15 @@ app.get('/contact', (req, res) => {
 app.post('/contact', (req, res) => {
     console.log(req.body);
     res.send("ok")
+    nodemailer.createTransport({
+        host: 'mail.yourdomain.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+          user: 'support@cheapgta.com', // your domain email address
+          pass: 'Support0407*' // your password
+        }
+      });
 })
 app.get('*', (req, res) => {
     res.status(404).send("Page not found");

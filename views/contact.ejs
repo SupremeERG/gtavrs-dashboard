@@ -19,12 +19,12 @@
                     onsubmit="return validateForm()"
                 >
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email or Discord</label>
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
                         <input
                             name="identification"
                             class="form-control"
                             id="exampleFormControlInput1"
-                            placeholder="name@example.com|name#0000"
+                            placeholder="name@example.com"
                         >
                     </div>
                     <div class="mb-3">
@@ -37,7 +37,7 @@
                         ></textarea>
                     </div>
                 </form>
-                <p class="card-text">You will be responed to within 48 hours through email or discord</p>
+                <p class="card-text">You will be responed to within 48 hours through via email</p>
                 <button
                     form="contact-form"
                     type="submit"
@@ -45,21 +45,5 @@
                 >Submit</button>
             </div>
         </div>
-        <script>
-            function validateForm() {
-                var msgForm = document.forms["Form"]["msg"].value;
-                var resForm = document.forms["Form"]["identification"].value;
-
-                if(msgForm == "" || resForm==""){
-                    alert("Please fill in the forms correctly");
-                    return false;
-                }
-                else if(!resForm.includes("@") || !resForm.includes("#")) {
-                    alert("Please fill in the forms correctly")
-                    return false;
-                }
-                else return true;
-            }
-        </script>
     </body>
 </html>
