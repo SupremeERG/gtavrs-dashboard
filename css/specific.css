@@ -1,6 +1,8 @@
 .contact-grid {
-    
+    margin-top: 8em;
+    width: 24em;
 }
+
 
 .contact-option {
     display: inline-block;
