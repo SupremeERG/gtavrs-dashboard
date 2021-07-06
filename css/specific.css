@@ -14,7 +14,7 @@
 .grid-box-container {
     background-color: rgba(255, 255, 255, .85);
 }
-.grid-box-container > .space-5 {
+.grid-box-container > .container > .space-5 {
     margin: 5px;
 }
 .window-box {
