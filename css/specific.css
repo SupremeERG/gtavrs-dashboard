@@ -15,6 +15,9 @@
     background-color: white;
     opacity: .4;
 }
+.grid-box-container > .card {
+    opacity: 1;
+}
 .window-box {
     height: 480px;
     width: 720px;
