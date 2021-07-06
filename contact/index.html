@@ -9,6 +9,9 @@
         <link href="/css/stylesheet.css" rel="stylesheet">
         <link href="/css/specific.css" rel="stylesheet">
         <link href="/images/icon.png" rel="icon">
+
+        <!-- Jquery (3.6.0)-->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
@@ -91,9 +94,9 @@
         <div>
             <div class="contact-grid center">
                 <div style="width: 500px;">
-                    <button class="contact-option" id="liveToastBtn">
+                    <button class="contact-option" onclick="copyEmail()">
                         <img class="contact-img" src="/images/email-icon.png" alt="Email">
-                        <h5 class="contact-title">Via Email</h5>
+                        <h5 class="contact-title" id="email">Via Email</h5>
                     </button>
                     <button class="contact-option">
                         <img class="contact-img" src="/images/discord.png" alt="Discord">
@@ -106,6 +109,19 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function copyEmail() {
+                var tempElem = $('<input>').val('support@cheapgta.com')
+                tempElem.appendTo('body').select();
+                document.execCommand('copy');
+                tempElem.remove();
+                document.getElementById('email').innerHTML = "Copied";
+                setTimeout(() => {
+                    document.getElementById('email').innerHTML = "via Email";
+                }, 2000)
+            }
+            </script>
 
     </body>
 </html>
