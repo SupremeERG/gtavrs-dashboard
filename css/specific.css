@@ -3,6 +3,11 @@
     width: 24em;
 }
 
+.main-bg {
+    size: cover;
+    background-image: url('/images/bg.jpg');
+}
+
 .contact-img {
     width: 128px;
     height: 128px;
