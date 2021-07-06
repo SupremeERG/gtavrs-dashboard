@@ -15,6 +15,10 @@
     margin-top: 5em;
 }
 
+.shop-item {
+    text-align: center;
+}
+
 .grid-box-container {
     background-color: rgba(255, 255, 255, .85);
 }
