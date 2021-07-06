@@ -9,6 +9,11 @@
     background-image: url('/images/bg.jpg');
 }
 
+.window-box {
+    height: 480px;
+    width: 720px;
+}
+
 .contact-img {
     width: 128px;
     height: 128px;
