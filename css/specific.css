@@ -18,7 +18,9 @@
 .shop-item {
     text-align: center;
 }
-
+.list-group-item{
+    border-color: transparent;
+}
 .grid-box-container {
     background-color: rgba(255, 255, 255, .85);
 }
