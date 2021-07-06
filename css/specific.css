@@ -12,11 +12,10 @@
 }
 
 .grid-box-container {
-    background-color: white;
-    opacity: .4;
+    background-color: rgba(255, 255, 255, .6);
 }
 .grid-box-container > .card {
-    opacity: 1;
+
 }
 .window-box {
     height: 480px;
