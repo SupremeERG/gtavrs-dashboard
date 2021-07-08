@@ -33,3 +33,7 @@
 .tag {
     margin-right: 3px;
 }
+
+.card-body > h6 {
+    margin-top: 5px;
+}
