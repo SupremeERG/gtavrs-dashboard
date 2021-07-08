@@ -18,7 +18,7 @@
 .shop-item {
     text-align: center;
 }
-.list-group-item{
+.list-group-item .list-group{
     border-color: transparent;
 }
 .grid-box-container {
