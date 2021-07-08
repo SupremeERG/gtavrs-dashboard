@@ -21,3 +21,15 @@
     background-color: #23272A;
     color: white;
 }
+
+.tags {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    margin-top: 3px;
+    margin-right: 4px;
+
+}
+.tag {
+    margin-right: 3px;
+}
