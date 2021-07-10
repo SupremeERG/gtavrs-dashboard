@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+include("functions.php");
+include("connection.php");
+
+$user_data = "";//check_login($con);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +30,18 @@
 
 <body>
 
-    <form style="border: 3px solid black;">
-    <input placeholder="Username" name="username">  
-    <input placeholder="Password" name="pwd">    
-    <button>Submit</button>
-</form>
+    <form method="POST" style="border: 3px solid black;">
+        <div>
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="user_name">
+        </div>
+
+        <div>
+            <label class="form-label">Password</label>
+            <input type="text" class="form-control" placeholder="Password" name="password">
+        </div>
+        <input class="btn btn-primary" value="Login" type="submit">
+    </form>
 </body>
 
 </html>
