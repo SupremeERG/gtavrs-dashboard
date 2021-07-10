@@ -1,7 +1,7 @@
 <?php
 
 $dbhost = "150.238.207.10";
-$dbuser = "admin";
+$dbuser = "supremee_admin";
 $dbpwd = "PK\$MI^uZQMYN";
 $dbname = "supremee_accs";
 
