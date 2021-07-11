@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "Username or password not found";
         }
 
-        header("Location: login.php");
     } else {
         echo "Please enter some valid information";
     }
