@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         mysqli_query($con, $query);
 
-        header("Location: login.php");
+        $_SESSION['user_id'] = $user_id;
+        header("Location: index.php");
     } else {
         echo "Please enter some valid information";
     }
