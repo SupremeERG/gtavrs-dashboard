@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label class="form-label">Password</label>
                 <input type="text" class="form-control" placeholder="Password" name="password">
             </div>
-            <input class="btn btn-primary" value="Login" type="submit">
+            <input class="btn btn-primary" value="Create Account" type="submit">
         </form>
     </div>
 </body>
