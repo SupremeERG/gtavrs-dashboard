@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link href="/css/custom.min.css" rel="stylesheet"> <!-- Bootstrap 5 custom sass file (compiled)-->
     <link href="/css/stylesheet.css" rel="stylesheet">
     <link href="/css/specific.css" rel="stylesheet">
+    <link href="/css/form-ctrl.css" rel="stylesheet">
     <link href="/images/icon.png" rel="icon">
 </head>
 
@@ -100,14 +101,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <form method="POST" style="border: 3px solid black;">
             <div>
                 <label class="form-label">Username</label>
-                <input type="text" class="form-control" name="user_name">
+                <input type="text" class="form-control inp" name="user_name">
             </div>
 
             <div>
                 <label class="form-label">Password</label>
-                <input type="text" class="form-control" placeholder="Password" name="password">
+                <input type="text" class="form-control inp" name="password">
             </div>
-            <input class="btn btn-primary" value="Create Account" type="submit">
+            <input class="btn btn-primary btn-submit" value="Create Account" type="submit">
         </form>
     </div>
 </body>
