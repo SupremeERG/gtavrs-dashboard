@@ -100,7 +100,7 @@
                 $password = $_POST['password'];
                 if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
                     //save to db;
-                    $user_id = random_num(20);
+                    $user_id = random_num(8);
                     $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
 
