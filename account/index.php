@@ -30,7 +30,7 @@ $user_data = check_login($con);
 
 <body>
     <a href="logout.php">logout</a>
-    <h1> you are logged in</h1>
+    <h1> you are logged in to the <?php echo $user_data['user_name'] ?> account</h1>
 </body>
 
 </html>
