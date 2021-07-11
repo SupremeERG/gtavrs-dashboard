@@ -1,42 +1,3 @@
-<?php
-session_start();
-
-include("connection.php");
-include("functions.php");
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // data was posted
-    $user_name = $_POST['user_name'];
-    $password = $_POST['password'];
-    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-        //read the db;
-        $query = "SELECT * from users where user_name = '$user_name' limit 1";
-
-        $result = mysqli_query($con, $query);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            if($user_data['password'] == $password) {
-                $_SESSION['user_id'] = $user_data['user_id'];
-                header("Location: index.php");
-                die;
-            }
-            else {
-                echo "Username or password not found";
-            }
-        }
-        else {
-            echo "Username or password not found";
-        }
-
-    } else {
-        echo "Please enter some valid information";
-    }
-};
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,6 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/account">Account</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
@@ -122,6 +86,41 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label class="form-label">Password</label>
                 <input type="text" class="form-control inp border-primary" name="password">
             </div>
+            <?php
+            session_start();
+
+            include("connection.php");
+            include("functions.php");
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                // data was posted
+                $user_name = $_POST['user_name'];
+                $password = $_POST['password'];
+                if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+                    //read the db;
+                    $query = "SELECT * from users where user_name = '$user_name' limit 1";
+
+                    $result = mysqli_query($con, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        $user_data = mysqli_fetch_assoc($result);
+                        if ($user_data['password'] == $password) {
+                            $_SESSION['user_id'] = $user_data['user_id'];
+                            header("Location: index.php");
+                            die;
+                        } else {
+                            echo "Username or password not found";
+                        }
+                    } else {
+                        echo "Username or password not found";
+                    }
+                } else {
+                    echo "Please enter some valid information";
+                }
+            };
+
+
+            ?>
+
             <input class="btn btn-primary btn-submit" value="Login to Account" type="submit">
         </form>
     </div>

@@ -20,12 +20,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/images/icon.png" class="icon" alt="GTA V Recovery Service">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,7 +36,8 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Shortcut
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -57,6 +60,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/account">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
