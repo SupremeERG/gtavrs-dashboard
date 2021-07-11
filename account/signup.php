@@ -13,10 +13,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
 
 
-        mysqli_query($con, $query);
+        //make sure data does not already exist;
+        $check_query = "SELECT * from users where user_name = '$user_name' limit 1";
 
-        $_SESSION['user_id'] = $user_id;
-        header("Location: index.php");
+        $result = mysqli_query($con, $query);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+            echo "Account already exists";
+        }
+        else {
+            echo "Username or password not found";
+        }
+
     } else {
         echo "Please enter some valid information";
     }
