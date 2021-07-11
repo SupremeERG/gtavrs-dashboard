@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include("/account/connection.php");
-include("/account/functions.php");
+include("connection.php");
+include("functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // data was posted
     $user_name = $_POST['user_name'];
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         mysqli_query($con, $query);
 
-        header("Location: /account/login.php");
+        header("Location: login.php");
     } else {
         echo "Please enter some valid information";
     }
