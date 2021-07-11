@@ -1,40 +1,3 @@
-<?php
-session_start();
-
-include("connection.php");
-include("functions.php");
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    // data was posted
-    $user_name = $_POST['user_name'];
-    $password = $_POST['password'];
-    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-        //save to db;
-        $user_id = random_num(20);
-        $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
-
-
-        //make sure data does not already exist;
-        $check_query = "SELECT * from users where user_name = '$user_name' limit 1";
-
-        $result = mysqli_query($con, $check_query);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            echo "Account already exists";
-        } else {
-            mysqli_query($con, $query);
-
-            $_SESSION['user_id'] = $user_id;
-            header("Location: index.php");
-        }
-    } else {
-        echo "Please enter some valid information";
-    }
-};
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,6 +83,41 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <label class="form-label">Password</label>
                 <input type="text" class="form-control inp border-primary" name="password">
             </div>
+            <?php
+            session_start();
+
+            include("connection.php");
+            include("functions.php");
+            if ($_SERVER['REQUEST_METHOD'] == "POST") {
+                // data was posted
+                $user_name = $_POST['user_name'];
+                $password = $_POST['password'];
+                if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+                    //save to db;
+                    $user_id = random_num(20);
+                    $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+
+
+                    //make sure data does not already exist;
+                    $check_query = "SELECT * from users where user_name = '$user_name' limit 1";
+
+                    $result = mysqli_query($con, $check_query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        echo "Account already exists";
+                    } else {
+                        mysqli_query($con, $query);
+
+                        $_SESSION['user_id'] = $user_id;
+                        header("Location: index.php");
+                    }
+                } else {
+                    echo "Please enter some valid information";
+                }
+            };
+
+
+            ?>
             <input class="btn btn-primary btn-submit" value="Create Account" type="submit">
         </form>
     </div>
