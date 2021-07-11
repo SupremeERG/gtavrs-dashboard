@@ -1,6 +1,6 @@
 .inp {
     padding: 5px;
-    border: 0.5px solid black;
+    border: 0.5px solid;
     width: 18rem;
     margin: auto 5px 5px;
 }
@@ -8,4 +8,10 @@
 .btn-submit {
     margin: 0 auto;
     display: block;
+    margin-top: 2em;
+    margin-bottom: .5em;
+}
+
+.border-primary input {
+    border-width: 1px;
 }

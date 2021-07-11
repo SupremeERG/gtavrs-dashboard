@@ -98,17 +98,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </nav>
 
     <div class="center border border-primary rounded" style="margin-top: 6em; border-radius: 5px; width: fit-content; padding: 5px;">
-        <h2>Signup<br><a href="/account/login.php">Already have an account?</a></h2>
+        <h5 style="text-align: center;">Signup<br><a href="/account/login.php">Already have an account?</a></h5>
 
         <form method="POST">
             <div>
                 <label class="form-label">Username</label>
-                <input type="text" class="form-control inp" name="user_name">
+                <input type="text" class="form-control inp border-primary" name="user_name">
             </div>
 
             <div>
                 <label class="form-label">Password</label>
-                <input type="text" class="form-control inp" name="password">
+                <input type="text" class="form-control inp border-primary" name="password">
             </div>
             <input class="btn btn-primary btn-submit" value="Create Account" type="submit">
         </form>
