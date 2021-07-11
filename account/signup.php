@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include("connection.php");
-include("functions.php");
+include("/account/connection.php");
+include("/account/functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // data was posted
     $user_name = $_POST['user_name'];
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         mysqli_query($con, $query);
 
-        header("Location: login.php");
+        header("Location: /account/login.php");
     } else {
         echo "Please enter some valid information";
     }
@@ -97,7 +97,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
     </nav>
 
-    <div class="center" style="margin-top: 6em;">
+    <div class="center" style="margin-top: 6em; border-radius: 5px; width: fit-content; padding: 5px;">
+        <h2>Signup<br><a href="/account/login.php">Already have an account?</a></h2>
+
         <form method="POST" style="border: 3px solid black;">
             <div>
                 <label class="form-label">Username</label>
