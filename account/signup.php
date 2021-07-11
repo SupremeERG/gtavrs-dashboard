@@ -16,15 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //make sure data does not already exist;
         $check_query = "SELECT * from users where user_name = '$user_name' limit 1";
 
-        $result = mysqli_query($con, $query);
+        $result = mysqli_query($con, $check_query);
 
         if ($result && mysqli_num_rows($result) > 0) {
             echo "Account already exists";
-        }
-        else {
-            echo "Username or password not found";
-        }
+        } else {
+            mysqli_query($con, $query);
 
+            $_SESSION['user_id'] = $user_id;
+            header("Location: index.php");
+        }
     } else {
         echo "Please enter some valid information";
     }
