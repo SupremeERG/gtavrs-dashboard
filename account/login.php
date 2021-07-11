@@ -78,8 +78,8 @@
 
         <form method="POST">
             <div>
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control inp border-primary" name="user_name">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control inp border-primary" name="user_email">
             </div>
 
             <div>
@@ -93,11 +93,11 @@
             include("functions.php");
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 // data was posted
-                $user_name = $_POST['user_name'];
+                $user_email = $_POST['user_email'];
                 $password = $_POST['password'];
-                if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+                if (!empty($user_email) && !empty($password) && !is_numeric($user_email)) {
                     //read the db;
-                    $query = "SELECT * from users where user_name = '$user_name' limit 1";
+                    $query = "SELECT * from users where user_email = '$user_email' limit 1";
 
                     $result = mysqli_query($con, $query);
 
@@ -108,10 +108,10 @@
                             header("Location: index.php");
                             die;
                         } else {
-                            echo "Username or password not found";
+                            echo "Email or password not found";
                         }
                     } else {
-                        echo "Username or password not found";
+                        echo "Email or password not found";
                     }
                 } else {
                     echo "Please enter some valid information";

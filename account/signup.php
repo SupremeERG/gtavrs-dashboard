@@ -84,6 +84,10 @@
                 <label class="form-label">Username</label>
                 <input type="text" class="form-control inp border-primary" name="user_name">
             </div>
+            <div>
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control inp border-primary" name="user_email">
+            </div>
 
             <div>
                 <label class="form-label">Password</label>
@@ -97,15 +101,17 @@
             if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 // data was posted
                 $user_name = $_POST['user_name'];
+                $user_email = $_POST['user_email'];
                 $password = $_POST['password'];
-                if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+
+                if (!empty($user_name) && !empty($password) && !empty($user_email) && !is_numeric($user_name)) {
                     //save to db;
                     $user_id = random_num(8);
-                    $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+                    $query = "insert into users (user_id,user_name,user_email,password) values ('$user_id','$user_name','$user_email','$password')";
 
 
                     //make sure data does not already exist;
-                    $check_query = "SELECT * from users where user_name = '$user_name' limit 1";
+                    $check_query = "SELECT * from users where user_email = '$user_email' limit 1";
 
                     $result = mysqli_query($con, $check_query);
 
