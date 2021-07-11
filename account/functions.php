@@ -16,3 +16,18 @@ function check_login($con) {
     header('Location: login.php');
     die;
 }
+
+function random_num($len) {
+    $text = "";
+    if(!is_numeric($len) || $len < 5)
+    {
+        $len = 5;
+    };
+    $len = rand(4,$len);
+    for ($i=0; $i < $len; $i++) {
+
+        $text .= rand(0,9);
+    };
+
+    return $text;
+}
