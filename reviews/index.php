@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ERGs Recoveries" />
-    <meta property="og:description" content="Official Grand Theft Auto V Recovery Service. Our service has the most fast, trustworthy and cheap recovery packages. Our menus don't get banned and your info is never saved." />
+    <meta property="og:description"
+        content="Official Grand Theft Auto V Recovery Service. Our service has the most fast, trustworthy and cheap recovery packages. Our menus don't get banned and your info is never saved." />
     <meta property="og:url" content="https://cheapgta.com" />
     <meta property="og:image" content="/images/icon.png" />
     <title>GTA 5 Recovery Service</title>
@@ -15,12 +16,11 @@
     <link href="/css/custom.min.css" rel="stylesheet"> <!-- Bootstrap 5 custom sass file (compiled)-->
     <link href="/css/stylesheet.css" rel="stylesheet">
     <link href="/css/specific.css" rel="stylesheet">
-    <link href="/css/form-ctrl.css" rel="stylesheet">
     <link href="/images/icon.png" rel="icon">
 </head>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+<body class="body-bg">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="/images/icon.png" class="icon" alt="GTA V Recovery Service">
@@ -59,10 +59,13 @@
                         <a class="nav-link" href="/store/checkout">Checkout</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/account">Account</a>
+                        <a class="nav-link" href="/account">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -76,71 +79,46 @@
         </div>
     </nav>
 
-    <div class="center border border-primary rounded" style="margin-top: 6em; border-radius: 5px; width: fit-content; padding: 5px;">
-        <h5 style="text-align: center;">Signup<br><a href="/account/login.php">Already have an account?</a></h5>
-
-        <form method="POST">
-            <div>
-                <label class="form-label">Username</label>
-                <input type="text" class="form-control inp border-primary" name="user_name">
+    <!-- white box container -->
+    <div class="grid-box-container center-hv" style="margin-top: 5em">
+        <div class="container" style="margin-top: 0;">
+            <div class="row space-5">
+                <div class="card dark-elem" style="width: 24rem;">
+                    <div class="card-body">
+                        <p class="card-text">All our recovery packages, prices and deals in one spot.</p>
+                        <a href="/store" class="card-link">
+                            <button class="btn btn-primary">Shop</button>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label class="form-label">Email</label>
-                <input type="text" class="form-control inp border-primary" name="user_email">
+            <div class="row space-5">
+                <div class="card dark-elem" style="width: 24rem;">
+                    <div class="card-body">
+                        <p class="card-text">Speak with ERG. Have questions about what we do with your info, recovery
+                            process or a custom recovery package?<br>Download discord and speak with ERG or email us.</p>
+                        <a href="/contact" class="card-link">
+                        <buton class="btn btn-primary">Speak to Me</buton>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <label class="form-label">Password</label>
-                <input type="text" class="form-control inp border-primary" name="password">
+            <div class="row space-5">
+                <div class="card dark-elem" style="width: 24rem;">
+                    <div class="card-body">
+                        <p class="card-text">Our services have many limitations so you must read our pricacy and policy along with our disclaimer.</p>
+                        <a href="/legal" class="card-link">
+                        <button class="btn btn-primary">Privacy & Policy</button>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <?php
-            session_start();
-
-            include("connection.php");
-            include("functions.php");
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                // data was posted
-                $user_name = $_POST['user_name'];
-                $user_email = $_POST['user_email'];
-                $password = $_POST['password'];
-
-                if (!empty($user_name) && !empty($password) && !empty($user_email) && !is_numeric($user_name)) {
-                    //save to db;
-                    $user_id = random_num(8);
-                    $query = "insert into users (user_id,user_name,user_email,password) values ('$user_id','$user_name','$user_email','$password')";
-
-
-                    //make sure data does not already exist;
-                    $check_query_email = "SELECT * from users where user_email = '$user_email' limit 1";
-                    $check_query_username = "SELECT * from users where user_name = '$user_name' limit 1";
-
-
-                    $result_email = mysqli_query($con, $check_query_email);
-                    $result_username = mysqli_query($con, $check_query_username);
-
-
-                    if ($result_email && mysqli_num_rows($result_email) > 0) {
-                        echo "Account already exists with this email";
-                    } 
-                    elseif ($result_username && mysqli_num_rows($result_username) > 0) {
-                        echo "Account already exists with this username";
-                    }
-                    else {
-                        mysqli_query($con, $query);
-
-                        $_SESSION['user_id'] = $user_id;
-                        header("Location: index.php");
-                    }
-                } else {
-                    echo "Please enter some valid information";
-                }
-            };
-
-
-            ?>
-            <input class="btn btn-primary btn-submit" value="Create Account" type="submit">
-        </form>
+        </div>
     </div>
+
+    </div>
+
+
 </body>
 
 </html>
